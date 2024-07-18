@@ -1,0 +1,46 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Exchange</title>
+</head>
+<body>
+    <h1>Language Exchange</h1>
+    <label for="nativeLanguage">Select your native language:</label>
+    <select id="nativeLanguage">
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <!-- Add more language options as needed -->
+    </select>
+    <label for="learnLanguage">Select a language you want to learn:</label>
+    <select id="learnLanguage">
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <!-- Add more language options as needed -->
+    </select>
+    <button id="startButton">Start</button>
+
+    <div id="loadingScreen" style="display: none;">
+        <p>Searching for another user...</p>
+    </div>
+
+    <div id="matchScreen" style="display: none;">
+        <div id="chatBox">
+            <ul id="messages"></ul>
+            <input id="messageInput" autocomplete="off" /><button id="sendMessage">Send</button>
+        </div>
+
+        <div id="videoContainer">
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-peer@9.0.0/simplepeer.min.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
